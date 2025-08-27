@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(254, 219, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.container {
+    width: 50%;
+    padding: 20px;
+    border: solid 3px rgb(107, 16, 86);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(248, 241, 246);
+    box-shadow: 10px 5px 5px rgb(107, 16, 86);  
+}
+
+.title {
+    font-size: 200%;
+    background-color: rgb(107, 16, 86);
+    color: rgb(248, 241, 246);
+    text-align: center;
+    padding: 1px 40px;
+}
+
+.cont-text {
+    font-size: 100%;
+    font-weight: 600;
+    margin-top: 15px;
+    color: rgb(107, 16, 86);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 10%;
+    background-color: rgb(254, 219, 239);
+    border-color: rgb(107, 16, 86);
+    border-width: 900;
+    color:rgb(107, 16, 86);
+}
+
+.btn:hover {
+    background-color: rgb(107, 16, 86);
+    color:rgb(248, 241, 246);
+    border-color:rgb(248, 241, 246);
+    font-weight: 900;
+}
+
+img {
+    width: 60%;
+    height: 60%;
+}
+
+.reset-btn {
+    padding: 5px 5%;
+    border-radius: 5%;
+    background-color: rgb(107, 16, 86);
+    border-color: rgb(254, 219, 239);
+    border-width: 900;
+    color:rgb(254, 219, 239);
+}
+
+.reset-btn:hover{
+    color:rgb(107, 16, 86);
+    background-color: rgb(254, 219, 239);
+    border-color: rgb(107, 16, 86);
+    font-weight: 900;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-text {
+    color:rgb(107, 16, 86);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.container.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.score {
+    color:rgb(107, 16, 86);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.score-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}

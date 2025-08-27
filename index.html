@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock, Paper, Scissors</title>
 </head>
 <body>
+    <div class="container top">
+        <h1 class="title">Rock, paper, scissors</h1>
+
+        <p class="cont-text">Make your choice:</p>
+
+        <div class="btn-container">
+            <button class="btn" id="rock">
+                <img src="./images/rock.png" alt="Picture of a rock">
+                Rock
+            </button>
+            <button class="btn" id="paper">
+                <img src="./images/paper.png" alt="Picture of a piece o paper">
+                Paper
+            </button>
+            <button class="btn" id="scissors">
+                <img src="./images/scissors.png" alt="Picture of scissors">
+                Scissors
+            </button>
+        </div>
+
+        <button id="reset" class="reset-btn">Reset</button>
+    </div>
+
+    <div class="result">
+        <p class="result-text"></p>
+    </div>
+
+    <div class="container bottom">
+            <div class="score-cont">
+                <p class="score text">Your score</p>
+                <p class="score num" id="human-score"></p>
+            </div>
+            <div class="score-cont">
+                <p class="score text">Round</p>
+                <p class="score num" id="round"></p>
+            </div>
+            <div class="score-cont">
+                <p class="score text">My score</p>
+                <p class="score num" id="computer-score"></p>
+            </div>
+    </div>
+ 
     <script src="javascript.js"></script>
 </body>
 </html>
