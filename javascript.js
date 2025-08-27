@@ -1,9 +1,7 @@
 const choice = ["rock", "paper", "scissors"];
-gameOver = false;
 let round = 0;
 let humanScore = 0;
 let computerScore = 0;
-let endText;
 
 function getComputerChoice(){
     let num = Math.floor(Math.random() * 3);
@@ -61,20 +59,13 @@ function reset(){
     round = 0;
 
     const result = document.querySelector(".result-text")
-    if(result.style.display != "none") hideScore(); //hides score
-
-    const buttons = document.querySelectorAll(".btn");
-    buttons.forEach((button) => {
-        button.disabled = false; // enable buttons
-    });
+    if(result.style.display != "none") hideScore(); //hides score if it wasn't
 }
 
 function endGame(humanScore){
-    gameOver = true;
-    const buttons = document.querySelectorAll(".btn");
-    buttons.forEach((button) => {
-        button.disabled = true; // disable buttons
-    });
+    //hide top container
+    const topContainer = document.querySelector(".container.top");
+    topContainer.style.display = "none";
 
     //show result message
     const result = document.querySelector(".result-text");
@@ -85,14 +76,20 @@ function endGame(humanScore){
         result.textContent = "AWW YOU LOST :("
     }
     
-    //add new text
+    //add play again button
     const container = document.querySelector(".result");
-    endText = document.createElement("p");
-    endText.textContent = "Click Reset to restart the game";
-    endText.classList.add("result-text");
-    endText.style.fontSize = "13px";
-    container.appendChild(endText);
+    const playAgain = document.createElement("button");
+    playAgain.textContent = "Play again";
+    playAgain.classList.add("reset-btn");
+    playAgain.style.fontSize = "20px";
+    container.appendChild(playAgain);
     container.classList.add("result");
+
+    playAgain.addEventListener("click", () =>{
+        topContainer.style.display = "flex";
+        playAgain.remove();
+        reset();
+    });
 }
 
 function playRound(humanChoice, computerChoice){
@@ -124,9 +121,9 @@ function playRound(humanChoice, computerChoice){
 }
 
 //choice buttons
-const buttons = document.querySelectorAll(".btn");
+const choiceButtons = document.querySelectorAll(".btn");
 
-buttons.forEach((button) => {
+choiceButtons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, getComputerChoice());
     });
@@ -135,9 +132,4 @@ buttons.forEach((button) => {
 //reset button
 const resetBtn = document.querySelector("#reset");
 
-resetBtn.addEventListener("click", () =>{
-    if(gameOver){
-        endText.remove();
-    }
-    reset();
-});
+resetBtn.addEventListener("click", reset);
